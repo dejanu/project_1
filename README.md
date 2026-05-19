@@ -49,4 +49,6 @@ Once the server is running, visit:
 - ReDoc: `http://127.0.0.1:8000/redoc`
 
 
+## Artifact Distribution
 
+* GHCR: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
