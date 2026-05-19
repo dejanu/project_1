@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+.uv/
+
+# Environment variables
+.env
+.env.*
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy / ruff / pyright
+.mypy_cache/
+.ruff_cache/
+pyrightconfig.json
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
