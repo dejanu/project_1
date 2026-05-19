@@ -17,6 +17,7 @@ pip install -r requirements.txt
 ## Running the server
 
 ```bash
+uv sync
 uv run uvicorn main:app --reload
 ```
 
