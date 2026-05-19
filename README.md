@@ -2,6 +2,8 @@
 
 A simple REST API built with [FastAPI](https://fastapi.tiangolo.com/) for managing items, backed by an in-memory store.
 
+Task board [here](https://github.com/users/dejanu/projects/5)
+
 ## Requirements
 
 - Python >= 3.10
