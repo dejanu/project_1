@@ -5,6 +5,7 @@ A simple REST API built with [FastAPI](https://fastapi.tiangolo.com/) for managi
 Task board [here](https://github.com/users/dejanu/projects/5)
 
 Git commands cheatsheet [here](https://dejanu.github.io/cheeatos/git.html)
+
 ## Requirements
 
 - Python >= 3.10
