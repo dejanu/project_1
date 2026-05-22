@@ -14,7 +14,7 @@ class Item(BaseModel):
 
 @app.get("/")
 async def root():
-	return{"message":"Hello world!"}
+	return{"message":"SALOOTARE"}
 
 @app.get("/health")
 def health():
