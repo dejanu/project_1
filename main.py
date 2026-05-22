@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
 app = FastAPI(title="Items API")
@@ -12,9 +13,38 @@ class Item(BaseModel):
     price: float
 
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 async def root():
-	return{"message":"SALOOTARE"}
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head><title>Items API</title></head>
+    <body>
+        <h1>Items API</h1>
+        <form action="/items" method="post"
+              onsubmit="event.preventDefault(); submitForm()">
+            <label>Name: <input type="text" id="name" required></label><br><br>
+            <label>Price: <input type="number" id="price" step="0.01" required></label><br><br>
+            <button type="submit">Add Item</button>
+        </form>
+        <pre id="result"></pre>
+        <script>
+            async function submitForm() {
+                const res = await fetch('/items', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        name: document.getElementById('name').value,
+                        price: parseFloat(document.getElementById('price').value)
+                    })
+                });
+                const data = await res.json();
+                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+            }
+        </script>
+    </body>
+    </html>
+    """
 
 @app.get("/health")
 def health():
