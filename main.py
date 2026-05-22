@@ -12,6 +12,10 @@ class Item(BaseModel):
     price: float
 
 
+@app.get("/")
+async def root():
+	return{"message":"Hello world!"}
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
