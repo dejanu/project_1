@@ -14,6 +14,14 @@ Git commands cheatsheet [here](https://dejanu.github.io/cheeatos/git.html)
 
 ## Running the server
 
+* Using pip:
+
+```bash
+pip install -r requirements.txt
+python3 -m uvicorn main:app --reload --port 8080
+```
+* Using uv:
+
 ```bash
 uv sync
 uv run uvicorn main:app --reload

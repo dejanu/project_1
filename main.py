@@ -13,38 +13,9 @@ class Item(BaseModel):
     price: float
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 async def root():
-    return """
-    <!DOCTYPE html>
-    <html>
-    <head><title>Items API</title></head>
-    <body>
-        <h1>Items API</h1>
-        <form action="/items" method="post"
-              onsubmit="event.preventDefault(); submitForm()">
-            <label>Name: <input type="text" id="name" required></label><br><br>
-            <label>Price: <input type="number" id="price" step="0.01" required></label><br><br>
-            <button type="submit">Add Item</button>
-        </form>
-        <pre id="result"></pre>
-        <script>
-            async function submitForm() {
-                const res = await fetch('/items', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({
-                        name: document.getElementById('name').value,
-                        price: parseFloat(document.getElementById('price').value)
-                    })
-                });
-                const data = await res.json();
-                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
-            }
-        </script>
-    </body>
-    </html>
-    """
+	return{"message":"index page"}
 
 @app.get("/health")
 def health():
