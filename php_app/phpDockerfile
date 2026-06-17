@@ -1,0 +1,10 @@
+
+# php:8.3-apache image which has Apache pre-configured
+# already defines CMD ["apache2-foreground"]
+FROM php:8.3-apache
+
+# Copy app files to Apache web root
+COPY index.php /var/www/html/index.php
+
+# Expose port 80
+EXPOSE 80
