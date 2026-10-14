@@ -9,6 +9,10 @@ class RootEndpointTests(unittest.IsolatedAsyncioTestCase):
 
         self.assertEqual(response, {"message": "Hello World"})
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+    
 class ItemEndpointTests(unittest.TestCase):
     def setUp(self):
         main.db.clear()
