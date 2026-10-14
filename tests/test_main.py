@@ -3,6 +3,13 @@ import unittest
 import main
 
 
+class RootEndpointTests(unittest.IsolatedAsyncioTestCase):
+    async def test_root_returns_hello_world(self):
+        response = await main.root()
+
+        self.assertEqual(response, {"message": "Hello World"})
+
+
 class ItemEndpointTests(unittest.TestCase):
     def setUp(self):
         main.db.clear()
