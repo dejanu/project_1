@@ -16,11 +16,9 @@ class Item(BaseModel):
 def health():
     return {"status": "ok"}
 
-
 @app.get("/items")
 def list_items():
     return list(db.values())
-
 
 @app.post("/items", status_code=201)
 def create_item(item: Item):

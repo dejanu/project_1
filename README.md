@@ -37,6 +37,11 @@ uv run uvicorn main:app --reload
 | `GET` | `/items/{item_id}` | Get an item by ID |
 | `DELETE` | `/items/{item_id}` | Delete an item by ID |
 
+```bash
+# Run tests
+python -m unittest discover -s tests -v
+```
+
 ### Item schema
 
 ```json
