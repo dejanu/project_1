@@ -16,6 +16,10 @@ class Item(BaseModel):
 def health():
     return {"status": "ok"}
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
 @app.get("/items")
 def list_items():
     return list(db.values())
